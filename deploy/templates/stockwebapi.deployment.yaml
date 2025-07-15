@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stockback-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stockback-api
+  template:
+    metadata:
+      labels:
+        app: stockback-api
+    spec:
+      containers:
+        - name: stockback-api
+          image: stockwebapi:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+            - name: StockDBConnection
+              value: Host=postgres;Port=5432;Username=postgres;Password=postgres;Database=stockearticle
+            - name: DBProvider
+              value: PostgreSQL

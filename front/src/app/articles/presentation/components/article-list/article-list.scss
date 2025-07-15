@@ -1,0 +1,67 @@
+/* Style général du tableau */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Pour que les bordures se touchent */
+  margin: 20px 0; /* Marge autour du tableau */
+  font-family: 'Roboto', sans-serif; /* Police de caractères moderne */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile autour du tableau */
+}
+
+/* Style des en-têtes du tableau */
+th {
+  background-color: #007bff; /* Couleur de fond bleu */
+  color: white; /* Texte en blanc */
+  padding: 12px 15px; /* Espacement interne */
+  text-align: left; /* Alignement du texte */
+  font-weight: bold; /* Texte en gras */
+  border-top-left-radius: 8px; /* Coins arrondis en haut à gauche */
+  border-top-right-radius: 8px; /* Coins arrondis en haut à droite */
+  transition: background-color 0.3s ease; /* Transition douce pour la couleur de fond */
+}
+
+th:hover {
+  background-color: #0056b3; /* Changement de couleur au survol */
+}
+
+/* Style des cellules du tableau */
+td {
+  padding: 12px 15px; /* Espacement interne des cellules */
+  text-align: left; /* Alignement du texte */
+  border-bottom: 1px solid #e0e0e0; /* Bordure discrète en bas de chaque ligne */
+  color: #333; /* Texte sombre pour une bonne lisibilité */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Effet de zoom et ombre au survol */
+}
+
+/* Effet de surbrillance au survol sur les lignes */
+tr:hover td {
+  transform: scale(1.02); /* Légère mise en surbrillance en zoom */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre discrète pour faire ressortir la ligne */
+  background-color: #f5faff; /* Fond très léger bleu clair */
+}
+
+/* Style des lignes paires */
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Couleur de fond différente pour les lignes paires */
+}
+
+tr:nth-child(odd) {
+  background-color: #fff; /* Couleur de fond blanche pour les lignes impaires */
+}
+
+/* Style du bouton de suppression */
+button {
+  background-color: #ff4d4d; /* Rouge vif pour le bouton */
+  color: white; /* Texte en blanc */
+  border: none;
+  padding: 8px 15px; /* Espacement interne */
+  cursor: pointer; /* Curseur en main */
+  border-radius: 20px; /* Coins arrondis pour un bouton moderne */
+  font-size: 14px; /* Taille de texte un peu plus petite */
+  font-weight: bold; /* Texte en gras */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Effet au survol */
+}
+
+button:hover {
+  background-color: #e60000; /* Changement de couleur rouge au survol */
+  transform: scale(1.05); /* Légère mise en surbrillance du bouton */
+}

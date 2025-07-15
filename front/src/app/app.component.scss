@@ -1,0 +1,44 @@
+/* Style global pour la barre de navigation */
+nav {
+  background-color: #fff; /* Fond blanc pour un look épuré */
+  color: #333; /* Texte sombre pour une bonne lisibilité */
+  padding: 12px 25px; /* Espacement interne pour un design aéré */
+  display: flex;
+  justify-content: center; /* Centrer les liens horizontalement */
+  align-items: center; /* Centrer les éléments verticalement */
+  border-radius: 8px; /* Coins arrondis pour une touche moderne */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre subtile autour du nav */
+}
+
+/* Style des liens de navigation */
+nav a {
+  color: #007bff; /* Couleur bleue pour les liens */
+  text-decoration: none; /* Retirer le soulignement par défaut */
+  margin: 0 20px; /* Espacement entre les liens */
+  font-size: 16px; /* Taille de la police */
+  font-weight: 500; /* Légèrement gras */
+  transition: all 0.3s ease; /* Transition pour des effets doux au survol */
+}
+
+/* Effet de surbrillance au survol des liens */
+nav a:hover {
+  color: #4CAF50; /* Change la couleur des liens au survol */
+  transform: scale(1.1); /* Légère mise en surbrillance au survol */
+}
+
+/* Style pour le séparateur entre les liens */
+nav a::after {
+  content: '|'; /* Symbole de séparation */
+  margin: 0 20px; /* Espacement autour du séparateur */
+  color: #ddd; /* Couleur claire pour le séparateur */
+}
+
+nav a:last-child::after {
+  content: ''; /* Retirer le séparateur après le dernier lien */
+}
+
+/* Style pour le lien actif */
+nav a.router-link-active {
+  color: #007bff; /* Couleur bleue pour le lien actif */
+  font-weight: 600; /* Mettre en gras le lien actif */
+}

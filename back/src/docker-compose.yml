@@ -1,0 +1,28 @@
+services:
+  stockback.api:
+    image: ${DOCKER_REGISTRY-}stockbackapi
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - 8080:8080
+    build:
+      context: .
+      dockerfile: WebAPI/Dockerfile
+    environment:
+      StockDBConnection: Host=host.docker.internal;Port=5432;Username=postgres;Password=postgres;Database=stockearticle
+      DBProvider: PostgreSQL # SqlServer,PostgreSQL,MySQL
+  postgres:
+    image: postgres:17-alpine
+    ports:
+      - 5432:5432
+    volumes:    
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres  
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+# Il faudrait mettre en place un fichier env pour gerer les variables importantes comme les password et user
+# Gloabalement ce docker-compose est utile uniquement pour la mise en place du backend de l'app en local

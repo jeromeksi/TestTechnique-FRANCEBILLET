@@ -1,0 +1,92 @@
+/* Style général du formulaire */
+form {
+  background-color: #f7f7f7; /* Fond gris clair pour le formulaire */
+  padding: 25px;  /* Espacement autour du formulaire */
+  border-radius: 12px;  /* Coins arrondis pour un look plus moderne */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  /* Ombre subtile autour du formulaire */
+  max-width: 700px;  /* Limiter la largeur du formulaire */
+  margin: 30px auto;  /* Centrer le formulaire sur la page */
+  font-family: 'Roboto', sans-serif;  /* Police moderne */
+}
+
+/* Style des labels */
+label {
+  font-size: 16px;  /* Taille de police plus grande */
+  font-weight: 600;  /* Texte en gras */
+  color: #333;  /* Couleur sombre pour le texte */
+  display: block;  /* S'assurer que le label occupe toute la largeur */
+  margin-bottom: 10px;  /* Espacement sous le label */
+}
+
+/* Style des champs de formulaire (input, select, checkbox) */
+input, select, button {
+  width: 100%;  /* Largeur complète */
+  padding: 12px 20px;  /* Espacement à l'intérieur des champs */
+  margin-bottom: 15px;  /* Espacement sous chaque champ */
+  border: 1px solid #ddd;  /* Bordure discrète */
+  border-radius: 8px;  /* Coins arrondis */
+  font-size: 14px;  /* Taille de police adaptée */
+  background-color: #fff;  /* Fond blanc pour les champs */
+  color: #333;  /* Texte sombre */
+  transition: all 0.3s ease;  /* Transition pour les interactions */
+}
+
+/* Focus sur les champs (input, select, button) */
+input:focus, select:focus, button:focus {
+  border-color: #007bff;  /* Bordure bleue lors du focus */
+  outline: none;  /* Retirer l'effet de focus par défaut */
+  background-color: #f0f8ff;  /* Fond bleu clair au focus */
+}
+
+/* Style des boutons */
+button {
+  background-color: #007bff;  /* Fond bleu pour le bouton */
+  color: white;  /* Texte en blanc */
+  font-weight: 600;  /* Texte en gras */
+  cursor: pointer;  /* Changer le curseur au survol */
+  transition: background-color 0.3s ease, transform 0.2s ease;  /* Transition douce pour le survol */
+  padding: 14px;  /* Espacement interne pour le bouton */
+  border: none;  /* Retirer la bordure par défaut */
+  border-radius: 8px;  /* Coins arrondis pour le bouton */
+}
+
+/* Effet de survol du bouton */
+button:hover {
+  background-color: #0056b3;  /* Couleur légèrement plus foncée au survol */
+  transform: scale(1.05);  /* Agrandir légèrement le bouton au survol */
+}
+
+/* Style des champs avec erreur */
+input.ng-invalid, select.ng-invalid {
+  border-color: #e60000;  /* Bordure rouge pour les champs invalides */
+}
+
+/* Style des champs valides */
+input.ng-valid, select.ng-valid {
+  border-color: #28a745;  /* Bordure verte pour les champs valides */
+}
+
+/* Espacement entre chaque champ de formulaire */
+div {
+  margin-bottom: 20px;  /* Espacement plus grand entre les champs */
+}
+
+/* Style des messages d'erreur */
+.ng-invalid.ng-touched {
+  border-color: #e60000;  /* Bordure rouge pour champs invalides */
+}
+
+.ng-invalid.ng-touched + .error-message {
+  color: #e60000;  /* Couleur rouge pour les messages d'erreur */
+  font-size: 12px;  /* Taille de police petite */
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  display: none;
+}
+
+input.ng-invalid.ng-touched + .error-message {
+  display: block;
+}

@@ -1,0 +1,46 @@
+CREATE DATABASE stockearticle;
+
+\c "stockearticle";
+
+CREATE TABLE article (
+    Id SERIAL PRIMARY KEY,
+    Reference VARCHAR(100) NOT NULL UNIQUE,
+    Name VARCHAR(255) NOT NULL UNIQUE,
+    PriceHT REAL NOT NULL,
+    Storage INTEGER NOT NULL,
+    Type INTEGER NOT NULL,
+    CanTakeAway BOOLEAN NOT NULL
+);
+
+
+INSERT INTO Article (Reference, Name, PriceHT, Storage, Type, CanTakeAway) VALUES
+('B1ZK8X3MJD', 'Sandwich Jambon', 3.5, 413, 1, false),
+('B4Q1RW8ZL9', 'Salade César', 5.0, 287, 1, false),
+('B8NP0C2VXH', 'Pizza Margherita', 7.2, 852, 1, false),
+('B0E7JZ4TKC', 'Bouteille d''eau', 1.0, 973, 1, false),
+('B6A3YD9WQL', 'Croissant', 1.2, 615, 1, false),
+('B5D2XR7LNU', 'Pain au chocolat', 1.3, 202, 1, false),
+('B9MB7T0KFE', 'Yaourt nature', 0.8, 330, 1, false),
+('B2HG5C1VJW', 'Soda', 1.5, 791, 1, false),
+('B7Q3NV8MDY', 'Fromage', 2.5, 148, 1, false),	
+('B3X9PL2TRS', 'Charcuterie', 3.0, 884, 1, false),
+('B1JU8RC6LW', 'Stylo bille', 0.9, 59, 0, false),
+('B0MA4XN7ZP', 'Cahier A4', 2.0, 342, 0, false),
+('B6WE1Y9FQV', 'Agrafeuse', 5.5, 474, 0, false),
+('B8GK7DVZTW', 'Classeur', 3.2, 913, 0, false),
+('B2KY0CPXAB', 'Marqueur', 1.1, 275, 0, false),
+('B3ZN5R8LGF', 'Effaceur', 0.7, 699, 0, false),
+('B7DW3TJXVN', 'Trousse', 4.0, 806, 0, false),
+('B5XJ6KZBEP', 'Colle', 1.3, 112, 0, false),
+('B4PA9MGUQC', 'Calculatrice', 9.9, 900, 0, false),
+('B9CT6Y2JMV', 'Lampe de bureau', 15.0, 246, 0, false),
+('B0VA1Z5HXR', 'Wrap poulet', 4.5, 134, 1, true),
+('B6RY3WXGLK', 'Fruit frais', 1.0, 381, 1, true),
+('B1ZU7QTXND', 'Jus d’orange', 2.0, 768, 1, true),
+('B2FR8CMKLB', 'Café', 1.5, 59, 1, true),
+('B3EQ4LDHVJ', 'Thé', 1.2, 485, 1, true),
+('B7YM9TRZCE', 'Carnet', 3.5, 652, 0, false),
+('B0VH1WDMRU', 'Règle', 1.0, 101, 0, false),
+('B5GK8PXVLJ', 'Boîte de rangement', 6.0, 874, 0, false),
+('B9AJ2CWXQF', 'Sac à dos', 20.0, 342, 0, false),
+('B4ML6ZYVKE', 'Tablette graphique', 50.0, 437, 0, false);

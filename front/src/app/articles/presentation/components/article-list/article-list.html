@@ -1,0 +1,28 @@
+<!-- src/app/article-list/article-list.component.html -->
+<div>
+  <h2>Liste des articles</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Référence</th>
+        <th>Nom</th>
+        <th>Prix HT</th>
+        <th>Prix TTC</th>
+        <th>Quantité</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <td>{{ article.reference }}</td>
+        <td>{{ article.name }}</td>
+        <td>{{ article.priceHT }}</td>
+        <td>{{ article.priceTTC }}</td>
+        <td>{{ article.storage }}</td>
+        <td>
+          <button (click)="deleteArticle(article.reference)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
