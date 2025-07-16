@@ -8,6 +8,20 @@ L'application est structurée en quatre couches principales : **Domain**, **Appl
 Le domaine métier est représenté par `Article`. Chaque couche est isolée selon son niveau d’abstraction afin de respecter le principe d’inversion des dépendances. Le **domaine ne dépend d’aucune technologie** ; les implémentations concrètes (ex. : accès à la base de données) sont injectées.
 
 ---
+### Test unitaire
+
+J'ai mis en place 4 tests unitaire vérifier des règles métier.
+
+- Verification du refut de prix négatif
+- Verification du refut du stockage négatif
+- Verification du refut du nom déjà existant 
+- Verification de la creation d'un article correct
+
+Pour lancer les tests sans visual studio, se placer dans `back/src` : 
+
+> dotnet test ./StockBack.Test
+
+---
 
 ### Fonctionnalités implémentées
 
