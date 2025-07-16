@@ -1,19 +1,25 @@
 # Test Technique - FRANCEBILLET
 
 ## Backend
+### Notes
+Pour ce test technique je n'ai pas mis de controle d'identité sur l'API mais il est évident que pour une application en production un controle sur les différents endpoint de l'API est indispensable.
 
 ### Architecture
 
-L'architecture suit les principes du Domain-Driven Design (DDD).  
-L'application est structurée en quatre couches principales : **Domain**, **Application**, **Infrastructure** et **WebAPI**.
+Application est en .NET 8.0, et suit l'architecture les principes du Domain-Driven Design (DDD).
+Elle est structurée en quatre couches principales : **Domain**, **Application**, **Infrastructure** et **WebAPI**.
 
 Le domaine métier est représenté par `Article`. Chaque couche est isolée selon son niveau d’abstraction afin de respecter le principe d’inversion des dépendances. Le **domaine ne dépend d’aucune technologie** ; les implémentations concrètes (ex. : accès à la base de données) sont injectées.
+
+L'application fonctionne avec une base de données PostgreSQL (fournis dans le docker-compose). J'utilise le micro ORM Dapper pour effectuer les request SQL.
+J'ai implémenté une gestion des exceptions simple basé sur des règles métiers fictive.
 
 ---
 
 ### Fonctionnalités implémentées
+> On peux retrouver les endpoints via un swagger.
 
-- Récuperation de la liste de tout les `Articles`
+- Récuperation de la liste de tout les `Articles` 
 - Récuperation d'un `Articles` par **reference**
 - Suppression d’un `Articles` par **référence**
 - Ajout d’un nouvel `Articles`
@@ -24,12 +30,12 @@ Le domaine métier est représenté par `Article`. Chaque couche est isolée sel
 
 ### Dockerisation & Base de données
 
-- J'ai crée **Dockerfile** pour containeriser le service Web.
+- J'ai crée **Dockerfile** pour containeriser le service WebApi.
 - Un **docker-compose** facilite le **debug** et le **développement multi-environnement**.
 
 Le `docker-compose` comprend :
 - La **Web API**, construite à partir du `Dockerfile`, exposée sur le port **8080** ;
-- Une **base de données PostgreSQL**, exposée sur le port **5432** _(utile qu'a des fins de test)_.
+- Une **base de données PostgreSQL** exposée sur le port **5432** _(utile qu'a des fins de test)_.
 
 Cette configuration permet de **travailler facilement sur Linux et Windows**, et constitue une base pour un futur **déploiement avec Helm**.
 
@@ -104,7 +110,7 @@ _(le swagger n'est pas accéssible car le build de la web api est en RELEASE, il
 
 ### Notes
 
-Étant moins expérimenté avec Angular, j'ai développé application simple, avec un style _"minimaliste"_, permettant de :
+Étant moins expérimenté avec Angular, j'ai développé application simple, avec un style _" très minimaliste"_, permettant de :
 - lister les articles,
 - en ajouter via un formulaire,
 - les supprimer par référence.
@@ -113,6 +119,7 @@ _(le swagger n'est pas accéssible car le build de la web api est en RELEASE, il
 > - _Lazy loading_
 > - _Gestion structurée des erreurs HTTP_
 > - _Nouvelles fonctionnalités_
+> - Un style plus moderne et efficace ne serait pas désagréable
 
 ---
 
@@ -165,4 +172,4 @@ docker run -p 4200:80 stockfront
 Accès à l'application :  
 [http://localhost:4200](http://localhost:4200)
 
-> L’adresse du backend est en dur : `http://localhost:8080`.
+> L’adresse du backend est en dur et doit-être : `http://localhost:8080`.
