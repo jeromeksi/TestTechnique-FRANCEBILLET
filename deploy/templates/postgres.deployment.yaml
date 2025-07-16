@@ -1,4 +1,4 @@
----
+{{- with .Values }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,9 +20,9 @@ spec:
             - containerPort: 5432
           env:
             - name: POSTGRES_PASSWORD
-              value: "postgres"
+              value: {{ .postgres.password }}
             - name: POSTGRES_USER
-              value: "postgres"
+              value: {{ .postgres.user }}
           volumeMounts:
             - name: init-db
               mountPath: /docker-entrypoint-initdb.d/init.sql
@@ -43,3 +43,4 @@ spec:
             name: postgres-init
         - name: postgres-data
           emptyDir: {}
+{{- end}}
