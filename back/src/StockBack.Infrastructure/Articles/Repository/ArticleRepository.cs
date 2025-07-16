@@ -31,7 +31,7 @@ public class ArticleRepository : IArticleRepository
         }
         catch (Exception ex) //Il faudrait vérifier le type d'excepion
         {
-            throw new InvalidOperationException($"REF_OR_NAME_ALREADY_EXISTE {createArticle.Name}");
+            throw new InvalidOperationException($"REF_OR_NAME_ALREADY_EXIST {createArticle.Name}");
         }
     }
     public async Task<bool> DeleteArticleAsync(string reference)

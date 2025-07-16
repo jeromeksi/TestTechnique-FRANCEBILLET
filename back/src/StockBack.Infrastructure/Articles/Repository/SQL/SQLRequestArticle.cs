@@ -1,4 +1,4 @@
-﻿namespace StockBack.Infrastructure.Persistence;
+﻿namespace StockBack.Infrastructure.Articles.Repository.SQL;
 
 /*
 Classe avec l'ensemble des request SQL utile pour le reprepository.
