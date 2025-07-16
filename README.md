@@ -40,6 +40,19 @@ Le `docker-compose` comprend :
 Cette configuration permet de **travailler facilement sur Linux et Windows**, et constitue une base pour un futur **déploiement avec Helm**.
 
 ---
+### Test unitaire
+
+J'ai mis en place 4 tests unitaire vérifier des règles métier.
+
+- Verification du refut de prix négatif
+- Verification du refut du stockage négatif
+- Verification du refut du nom déjà existant 
+- Verification de la creation d'un article correct
+
+Pour lancer les tests sans visual studio, se placer dans `back/src` : 
+
+> dotnet test ./StockBack.Test
+---
 
 ### Lancement en local
 
