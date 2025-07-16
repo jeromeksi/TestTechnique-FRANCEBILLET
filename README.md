@@ -6,7 +6,7 @@ Pour ce test technique je n'ai pas mis de controle d'identité sur l'API mais il
 
 ### Architecture
 
-Application est en .NET 8.0, et suit l'architecture les principes du Domain-Driven Design (DDD).
+L'application est en .NET 8.0, et suit les principes du Domain-Driven Design (DDD).
 Elle est structurée en quatre couches principales : **Domain**, **Application**, **Infrastructure** et **WebAPI**.
 
 Le domaine métier est représenté par `Article`. Chaque couche est isolée selon son niveau d’abstraction afin de respecter le principe d’inversion des dépendances. Le **domaine ne dépend d’aucune technologie** ; les implémentations concrètes (ex. : accès à la base de données) sont injectées.
@@ -30,7 +30,7 @@ J'ai implémenté une gestion des exceptions simple basé sur des règles métie
 
 ### Dockerisation & Base de données
 
-- J'ai crée **Dockerfile** pour containeriser le service WebApi.
+- J'ai crée un **Dockerfile** pour containeriser le service WebApi.
 - Un **docker-compose** facilite le **debug** et le **développement multi-environnement**.
 
 Le `docker-compose` comprend :
@@ -161,7 +161,7 @@ Accès à l'application :
 
 ### Dockerisation
 
-Un **Dockerfile** permet de containeriser le frontend.  
+J'ai fait un  **Dockerfile** permettant de containeriser le frontend.  
 Depuis le dossier `front` :
 
 ```
