@@ -27,19 +27,6 @@ J'ai implémenté une gestion des exceptions simple basé sur des règles métie
 - Récuperation de la liste des `Articles` qui ont un prix HT entre un **min** et **max**
 
 ---
-
-### Dockerisation & Base de données
-
-- J'ai crée un **Dockerfile** pour containeriser le service WebApi.
-- Un **docker-compose** facilite le **debug** et le **développement multi-environnement**.
-
-Le `docker-compose` comprend :
-- La **Web API**, construite à partir du `Dockerfile`, exposée sur le port **8080** ;
-- Une **base de données PostgreSQL** exposée sur le port **5432** _(utile qu'a des fins de test)_.
-
-Cette configuration permet de **travailler facilement sur Linux et Windows**, et constitue une base pour un futur **déploiement avec Helm**.
-
----
 ### Test unitaire
 
 J'ai mis en place 4 tests unitaire vérifier des règles métier.
@@ -52,6 +39,19 @@ J'ai mis en place 4 tests unitaire vérifier des règles métier.
 Pour lancer les tests sans visual studio, se placer dans `back/src` : 
 
 > dotnet test ./StockBack.Test
+---
+
+### Dockerisation & Base de données
+
+- J'ai crée un **Dockerfile** pour containeriser le service WebApi.
+- Un **docker-compose** facilite le **debug** et le **développement multi-environnement**.
+
+Le `docker-compose` comprend :
+- La **Web API**, construite à partir du `Dockerfile`, exposée sur le port **8080** ;
+- Une **base de données PostgreSQL** exposée sur le port **5432** _(utile qu'a des fins de test)_.
+
+Cette configuration permet de **travailler facilement sur Linux et Windows**, et constitue une base pour un futur **déploiement avec Helm**.
+
 ---
 
 ### Lancement en local
