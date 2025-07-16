@@ -2,6 +2,7 @@
 using Npgsql;
 using StockBack.Domain.Articles.Entities;
 using StockBack.Domain.Articles.Interfaces;
+using StockBack.Infrastructure.Articles.Repository.SQL;
 using StockBack.Infrastructure.Persistence;
 
 namespace StockBack.Infrastructure.Articles.Repository;

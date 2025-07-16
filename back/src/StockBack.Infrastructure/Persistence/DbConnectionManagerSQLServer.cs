@@ -8,7 +8,7 @@ namespace StockBack.Infrastructure.Persistence;
 
 /*
 Gestion de la connexion à la base de données.
-J'ai fait la mise en place du Desing pattern Factory pour générer le bon type de connexion en fonction du driver
+J'ai fait la mise en place du Desing pattern Factory pour générer le bon type de connexion en fonction du driver (Postgresql,Mysql,SQL Server)
 Les valeurs DatabaseProvider et StockDBConnection sont envoyé par la conf avec l'ajout des variable d'env ou par appsettings
 */
 public interface IDbConnectionFactory
